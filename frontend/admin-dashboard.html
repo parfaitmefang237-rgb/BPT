@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BPT - Admin</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/"><span class="logo">BPT</span><span>Tableau de bord admin</span></a>
+      <nav class="nav">
+        <span class="pill" data-user-name></span>
+        <a class="btn" href="/bibliotheque.html">Bibliotheque</a>
+        <button class="btn" data-logout>Deconnexion</button>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="page-head">
+        <h1>Administration</h1>
+        <p class="lead">Gestion des utilisateurs, groupes, categories et ressources.</p>
+      </section>
+      <section class="stats">
+        <div class="stat"><strong id="statUsers">0</strong>Utilisateurs</div>
+        <div class="stat"><strong id="statResources">0</strong>Ressources</div>
+        <div class="stat"><strong id="statCategories">0</strong>Categories</div>
+        <div class="stat"><strong id="statGroups">0</strong>Groupes</div>
+      </section>
+      <section class="two-col">
+        <form id="resourceForm" class="panel">
+          <h2>Ajouter une ressource</h2>
+          <label>Titre <input name="title" required></label>
+          <label>Description <textarea name="description"></textarea></label>
+          <label>Type
+            <select name="type" required>
+              <option value="pdf">PDF</option>
+              <option value="video">Video</option>
+              <option value="software">Logiciel</option>
+              <option value="link">Lien</option>
+            </select>
+          </label>
+          <label>Categorie <select id="resourceCategory" name="categoryId" required></select></label>
+          <label>Groupe autorise <select id="resourceGroup" name="groupId"><option value="">Ouvert</option></select></label>
+          <label>URL pour lien <input name="url" type="url"></label>
+          <label>Fichier <input name="file" type="file" accept=".pdf,.docx,.mp4,.zip"></label>
+          <button class="btn primary" type="submit">Publier</button>
+          <p id="adminMessage" class="message"></p>
+        </form>
+        <section class="panel">
+          <h2>Categories et groupes</h2>
+          <form id="categoryForm" class="form-row">
+            <input name="code" placeholder="Code" required>
+            <input name="name" placeholder="Nom categorie" required>
+            <button class="btn" type="submit">Ajouter categorie</button>
+          </form>
+          <form id="groupForm" class="form-row">
+            <input name="name" placeholder="Nom groupe" required>
+            <button class="btn" type="submit">Ajouter groupe</button>
+          </form>
+          <div id="adminLists" class="grid"></div>
+        </section>
+      </section>
+      <section class="panel">
+        <h2>Utilisateurs</h2>
+        <div class="table-wrap"><table><thead><tr><th>Nom</th><th>Email</th><th>Role</th><th>Groupe</th></tr></thead><tbody id="usersBody"></tbody></table></div>
+      </section>
+    </main>
+    <script src="/js/auth.js"></script>
+    <script src="/js/admin.js"></script>
+  </body>
+</html>

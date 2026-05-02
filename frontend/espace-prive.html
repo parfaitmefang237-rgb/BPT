@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BPT - Espace prive</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/"><span class="logo">BPT</span><span>Espace prive</span></a>
+      <nav class="nav">
+        <span class="pill" data-user-name></span>
+        <a class="btn" href="/bibliotheque.html">Bibliotheque</a>
+        <button class="btn" data-logout>Deconnexion</button>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="page-head">
+        <h1>Mon espace prive</h1>
+        <p class="lead">Documents personnels, notes et fichiers visibles uniquement par vous, sauf partage admin choisi.</p>
+      </section>
+      <section class="two-col">
+        <form id="privateUploadForm" class="panel">
+          <h2>Ajouter un document</h2>
+          <label>Titre <input name="title" required></label>
+          <label>Description <input name="description"></label>
+          <label>Fichier PDF, DOCX, MP4 ou ZIP <input name="file" type="file" accept=".pdf,.docx,.mp4,.zip" required></label>
+          <label><span><input name="adminVisible" type="checkbox" value="true" checked> Visible par admin</span></label>
+          <button class="btn primary" type="submit">Envoyer</button>
+          <p id="privateMessage" class="message"></p>
+        </form>
+        <section class="panel">
+          <h2>Notes personnelles</h2>
+          <textarea id="noteContent" placeholder="Vos notes..."></textarea>
+          <button class="btn primary" id="saveNote">Enregistrer</button>
+        </section>
+      </section>
+      <section class="panel">
+        <h2>Mes fichiers</h2>
+        <div id="privateFiles" class="grid"></div>
+      </section>
+    </main>
+    <script src="/js/auth.js"></script>
+    <script src="/js/espacePrive.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+Projet: Bibliotheque Professionnelle Transfrontaliere (BPT)
+
+Application web full-stack Node.js + Express + SQLite + frontend HTML/CSS/JS vanilla.
+
+Demarrage:
+1. cd backend
+2. npm install
+3. npm run dev
+4. Ouvrir http://localhost:3000
+
+Compte admin initial:
+- Email: admin@bpt.local
+- Mot de passe: AdminBPT2026!
+
+La photo du fondateur doit etre disponible dans public/images/fondateur.jpg.

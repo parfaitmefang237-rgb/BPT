@@ -1,0 +1,6 @@
+node_modules/
+backend/node_modules/
+backend/bpt.sqlite
+backend/protected_uploads/*
+!backend/protected_uploads/.gitkeep
+.env

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BPT - Bibliotheque</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/"><span class="logo">BPT</span><span>Bibliotheque</span></a>
+      <nav class="nav">
+        <span class="pill" data-user-name></span>
+        <a class="btn" href="/espace-prive.html">Espace prive</a>
+        <a class="btn" href="/admin-dashboard.html" id="adminLink">Admin</a>
+        <button class="btn" data-logout>Deconnexion</button>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="page-head">
+        <h1>Bibliotheque</h1>
+        <p class="lead">Ressources accessibles selon votre groupe, avec pagination pour connexions lentes.</p>
+      </section>
+      <section class="panel filters">
+        <label>Recherche <input id="search" placeholder="CV, reseaux, sante..."></label>
+        <label>Categorie <select id="categoryFilter"><option value="">Toutes</option></select></label>
+        <label>Type
+          <select id="typeFilter">
+            <option value="">Tous</option>
+            <option value="pdf">PDF</option>
+            <option value="video">Video</option>
+            <option value="software">Logiciel</option>
+            <option value="link">Lien</option>
+          </select>
+        </label>
+        <button class="btn primary" id="applyFilters">Filtrer</button>
+      </section>
+      <section id="resourceGrid" class="grid"></section>
+      <div class="panel actions">
+        <button class="btn" id="prevPage">Precedent</button>
+        <span class="pill" id="pageInfo">Page 1</span>
+        <button class="btn" id="nextPage">Suivant</button>
+      </div>
+    </main>
+    <script src="/js/auth.js"></script>
+    <script src="/js/bibliotheque.js"></script>
+  </body>
+</html>

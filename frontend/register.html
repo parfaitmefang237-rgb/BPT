@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BPT - Inscription</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="topbar"><a class="brand" href="/"><span class="logo">BPT</span><span>Inscription</span></a></header>
+    <main class="container page-head">
+      <section class="panel">
+        <h1>Inscription</h1>
+        <form id="registerForm">
+          <label>Nom complet <input name="name" required autocomplete="name"></label>
+          <label>Email <input name="email" type="email" required autocomplete="email"></label>
+          <label>Mot de passe <input name="password" type="password" minlength="8" required autocomplete="new-password"></label>
+          <label>Groupe <select id="groupId" name="groupId" required></select></label>
+          <div class="actions">
+            <button class="btn primary" type="submit">Creer mon compte</button>
+            <a class="btn" href="/login.html">J'ai deja un compte</a>
+          </div>
+          <p id="authMessage" class="message"></p>
+        </form>
+      </section>
+    </main>
+    <script src="/js/auth.js"></script>
+  </body>
+</html>

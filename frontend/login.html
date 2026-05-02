@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BPT - Connexion</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="topbar"><a class="brand" href="/"><span class="logo">BPT</span><span>Connexion</span></a></header>
+    <main class="container page-head">
+      <section class="panel">
+        <h1>Connexion</h1>
+        <p class="lead">Accedez a votre bibliotheque et a votre espace prive.</p>
+        <form id="loginForm">
+          <label>Email <input name="email" type="email" required autocomplete="email"></label>
+          <label>Mot de passe <input name="password" type="password" required autocomplete="current-password"></label>
+          <div class="actions">
+            <button class="btn primary" type="submit">Se connecter</button>
+            <a class="btn" href="/register.html">Creer un compte</a>
+          </div>
+          <p id="authMessage" class="message"></p>
+        </form>
+      </section>
+    </main>
+    <script src="/js/auth.js"></script>
+  </body>
+</html>
