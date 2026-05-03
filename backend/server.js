@@ -43,3 +43,11 @@ initDb()
     console.error('Erreur initialisation DB:', error);
     process.exit(1);
   });
+// Servir les fichiers du frontend
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Rediriger toutes les routes vers index.html (pour SPA ou navigation)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
