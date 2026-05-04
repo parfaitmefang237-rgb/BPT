@@ -9,6 +9,7 @@ const resourceRoutes = require('./routes/resourceRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const userRoutes = require('./routes/userRoutes');
 const groupRoutes = require('./routes/groupRoutes');
+const uploadRoutes = require("./routes/upload");
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/images', express.static(path.join(__dirname, '..', 'public', 'images')));
 app.use('/', express.static(path.join(__dirname, '..', 'frontend')));
+app.use("/api", uploadRoutes);
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', app: 'BPT' }));
 app.use('/api/auth', authRoutes);
