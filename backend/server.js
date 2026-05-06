@@ -10,8 +10,22 @@ const categoryRoutes = require('./routes/categoryRoutes');
 const userRoutes = require('./routes/userRoutes');
 const groupRoutes = require('./routes/groupRoutes');
 const uploadRoutes = require("./routes/upload");
-const { notFound, errorHandler } = require('./middleware/errorHandler');
+app.post('/api/save-video', async (req, res) => {
+  try {
+    const { title, description, url, adminVisible } = req.body;
 
+    if (!url) {
+      return res.status(400).json({ error: 'URL Cloudinary manquante' });
+    }
+
+    res.json({ message: 'Vidéo enregistrée avec succès !', url });
+  } catch (error) {
+    console.error('Erreur enregistrement vidéo :', error);
+    res.status(500).json({ error: 'Erreur serveur' });
+  }
+});
+
+const { notFound, errorHandler } = require('./middleware/errorHandler');
 const app = express();
 const port = process.env.PORT || 3001;
 
